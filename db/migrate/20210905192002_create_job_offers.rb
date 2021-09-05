@@ -5,7 +5,7 @@ class CreateJobOffers < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.string :career
       t.string :title
-      t.sinteger :salary
+      t.integer :salary
 
       t.timestamps
     end
