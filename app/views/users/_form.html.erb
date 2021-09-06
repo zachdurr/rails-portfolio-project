@@ -1,0 +1,52 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+      </h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :username %>
+  
+    <%= f.text_field :username, class: "form-control" %>
+      <br>
+    <%= f.label :first_name %>
+
+    <%= f.text_field :first_name, class: "form-control" %>
+     <br>
+    <%= f.label :last_name %>
+ 
+    <%= f.text_field :last_name, class: "form-control" %>
+  <br>
+    <%= f.label :email %>
+  
+    <%= f.text_field :email, class: "form-control" %>
+   <br>
+    <%= f.label :goals, "What are your career aspirations?" %>
+   
+    <%= f.text_area :goals, class: "form-control" %>
+      <br>
+    <%= f.label :career, "What kind of field are you looking for a career in?" %>
+
+    <%= f.text_field :career, class: "form-control" %>
+     <br>
+    <%= f.label :phone_number, "What is your phone number?" %>
+ 
+    <%= f.telephone_field :phone_number, class: "form-control" %>
+
+    <br>
+  
+    <%= f.label :password %>
+    <br>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <br/>
+    <%= f.submit class: "btn btn-primary" %>
+<% end %> 
