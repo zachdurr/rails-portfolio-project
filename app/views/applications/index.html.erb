@@ -1,0 +1,23 @@
+<div class="cover">
+    <ul>
+      <li><strong>Name</strong></li>
+      <li><strong>Cover Letter</strong></li>
+      <li><strong>Resume</strong></li>
+    </ul>
+</div>
+<div class="app-data">
+    <br/>
+    <% @applications.each do |application| %>
+    <ul>
+        <li><%= application.user.full_name %></li>
+        <li><%= application.cover_letter %></li>
+        <li><%= application.resume %></li>
+        <li><%= application.additional_information %></li>
+        <li><%= link_to "Show #{application.name}", application_path(application) %></li>
+
+    </ul>
+    <% end %>
+</div>
+<br>
+
+<%=  link_to "New Application Path", new_application_path %>

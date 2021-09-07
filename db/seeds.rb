@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+    applications = Application.create([{ cover_letter: 'Star Wars', resume: 'nothing', additional_information: 'nada'}, { cover_letter: 'second cover', resume: 'second resume', additional_information: 'a whole lot' }])

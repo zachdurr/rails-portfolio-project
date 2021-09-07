@@ -10,11 +10,18 @@ class ApplicationsController < ApplicationController
 
     def new
         @application = Application.new
+        @application.user_id = session[:user_id]
     end
 
     def create
-        attraction = Application.create(attraction_params)
-        redirect_to attraction_path(attraction)
+        @application = Application.new(application_params)
+        @user = User.find_by(id: params[:user_id])
+        @application.user = @user
+        if @application.save
+            redirect_to @application
+        else
+            render :new
+        end
     end
 
     def edit
@@ -30,8 +37,8 @@ class ApplicationsController < ApplicationController
 
     private
 
-    def attraction_params
-        params.require(:attraction).permit(:resume, :cover_letter, :additional_information)
+    def application_params
+        params.require(:application).permit(:resume, :cover_letter, :additional_information, :user_id)
     end
 
 end
