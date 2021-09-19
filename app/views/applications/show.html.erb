@@ -3,4 +3,8 @@
     <p><strong>Resume:</strong> <%= @application.resume %></p>
     <p><strong>Additional Information:</strong> <%= @application.additional_information %> </p>
 
-    
+<%= link_to 'Delete Application', application_path, method:'delete' %> <br>
+
+<%= link_to 'Create a new Application', '/new' %> <br>
+
+<%= link_to 'All applications', '/applications' %>

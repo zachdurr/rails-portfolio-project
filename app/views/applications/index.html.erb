@@ -10,14 +10,15 @@
     <% @applications.each do |application| %>
     <ul>
         <li><%= application.user.full_name %></li>
-        <li><%= application.cover_letter %></li>
-        <li><%= application.resume %></li>
+        <li><%= application.title %></li>
+        <li><%= application.cover_letter %>></li>
+        <li><img src="/<%= application.resume %>" id="resume"></li>
         <li><%= application.additional_information %></li>
-        <li><%= link_to "Show #{application.name}", application_path(application) %></li>
+        <li><%= link_to "Show #{application.additional_information}", application_path(application) %></li>
 
     </ul>
     <% end %>
 </div>
 <br>
 
-<%=  link_to "New Application Path", new_application_path %>
+<%=  link_to "Create a New Application", new_application_path %>

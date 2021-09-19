@@ -5,7 +5,7 @@
     <p><strong>Name:</strong> <%= @user.full_name %></p>
     <p><strong>Goals:</strong> <%= @user.goals %></p>
     <p><strong>Career:</strong>  <%= @user.career %></p>
-    <p><strong>Phone Number:</strong> <%= @user.phone_number %></p>
+    <p><strong>Phone Number:</strong> <%= @user.display_phone_number(@user.phone_number) %></p>
     <p><%= link_to 'See applications', applications_path %></p>
 
     <%= link_to 'Log Out', session_path, method:'delete' %>

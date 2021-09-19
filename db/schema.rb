@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_023528) do
+ActiveRecord::Schema.define(version: 2021_09_07_213552) do
 
   create_table "applications", force: :cascade do |t|
     t.text "cover_letter"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_023528) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "title"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_023528) do
     t.integer "salary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "time"
   end
 
   create_table "job_offers", force: :cascade do |t|
@@ -50,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_023528) do
     t.text "goals"
     t.text "career"
     t.string "password_digest"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -13,4 +13,12 @@ class User < ApplicationRecord
         self.first_name + " " + self.last_name
     end
 
+    def display_phone_number(number, options = {})
+        return unless number
+        options = options.symbolize_keys
+
+        parse_float(number, true) if options.delete(:raise)
+        ERB::Util.html_escape(ActiveSupport::NumberHelper.number_to_phone(number, options))
+    end
+
 end
