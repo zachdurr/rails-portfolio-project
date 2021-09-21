@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Review notes:
+
+- Add OMNIAuth 
+- User profile picture/picture

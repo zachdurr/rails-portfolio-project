@@ -1,10 +1,14 @@
-<p><strong>Name:</strong> <%= @application.user.full_name %></p>
-    <p><strong>Cover Letter:</strong> <%= @application.cover_letter %></p>
-    <p><strong>Resume:</strong> <%= @application.resume %></p>
+    <p><strong>Name:</strong> <%= @application.user.full_name %></p>
+    <p><strong>Cover Letter:</strong> <%= (url_for(@application.cover_letter)) %></p>
+    <p><strong>Resume:</strong> <%= (url_for(@application.resume)) %></p>
     <p><strong>Additional Information:</strong> <%= @application.additional_information %> </p>
 
 <%= link_to 'Delete Application', application_path, method:'delete' %> <br>
 
-<%= link_to 'Create a new Application', '/new' %> <br>
+<%= link_to 'Create a new Application', '/applications/new' %> <br>
 
-<%= link_to 'All applications', '/applications' %>
+<%= link_to 'All applications', '/applications' %> <br>
+
+
+
+<%= link_to 'Log Out', session_path, method:'delete' %>

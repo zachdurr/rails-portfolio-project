@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
     def index
-        @applications = Application.all 
+        @applications = Application.where(:user => session[:user_id])
     end
 
     def show

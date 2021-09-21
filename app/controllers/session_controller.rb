@@ -12,11 +12,18 @@ class SessionController < ApplicationController
             else
             render 'new'
             end
+        else
+            render 'new'
         end
     end
     
     def destroy
         session.delete("user_id")
         redirect_to root_path
+    end
+
+    private
+    def auth
+        request.env['omniauth.auth']
     end
 end

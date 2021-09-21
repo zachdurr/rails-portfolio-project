@@ -1,0 +1,6 @@
+<% if user_is_authenticated %>
+<%= current_user.full_name %>
+    <% else %>
+    <h3> You need to login! </h3>
+<% end %>
+    

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/signin', to: 'session#new', as: 'signin'
   post '/session', to: 'session#create', as: 'session'
+  get '/about', to: 'welcome#about'
   delete '/session/', to: 'session#destroy'
   post '/job_offers', to: 'job_offer#create', as: 'job_offers'
+  get '/auth/facebook/callback' => 'session#create'
 end
